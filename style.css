@@ -1,0 +1,151 @@
+/* Colors */
+:root {
+    --pink: #ff4770;
+    --light-pink: #ffbbca;
+    --medium-pink: #ff8db2;
+    --dark-red: #86001e;
+    --magenta: #c8005f;
+    --button-hover: #ffffff;
+    --cinnamoroll-blue: #89CFF0;
+}
+
+/* General Styling */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background-color: var(--light-pink);
+    overflow: hidden;
+    position: relative;
+}
+
+/* Heart Icon */
+.heart-icon {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: heartFloat 6s ease-in-out infinite;
+}
+
+.heart-img {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    animation: heartClick 0.3s ease-out;
+}
+
+@keyframes heartFloat {
+    0% {
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        transform: translateX(-50%) translateY(-50px);
+    }
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+@keyframes heartClick {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.5);
+    }
+}
+
+/* Button Movement */
+@keyframes buttonMove {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(var(--move-x), var(--move-y));
+    }
+}
+
+button {
+    transition: all 0.2s ease;
+}
+
+button.clicked {
+    animation: buttonMove 0.5s forwards;
+}
+
+/* Surprise Animation */
+@keyframes surpriseAnimation {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.surprise {
+    animation: surpriseAnimation 1s ease-out;
+}
+
+/* Message Container */
+.message-container {
+    display: none;
+    text-align: center;
+    background-color: var(--medium-pink);
+    padding: 2vw;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    color: var(--dark-red);
+    position: relative;
+    max-width: 90%;
+    padding-top: 5vw;
+}
+
+/* Final Message */
+.final-message {
+    display: none;
+    text-align: center;
+    background-color: var(--medium-pink);
+    padding: 2vw;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    color: var(--dark-red);
+    position: relative;
+    max-width: 90%;
+    padding-top: 5vw;
+}
+
+.final-message h1 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.button {
+    background-color: var(--pink);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    position: relative;
+}
+
+.button:hover {
+    background-color: var(--button-hover);
+    color: var(--pink);
+    transform: scale(1.1);
+}
